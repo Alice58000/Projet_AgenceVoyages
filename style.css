@@ -1,0 +1,253 @@
+body {
+  margin: auto;
+  background-image: url(island-pana.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  height: 100vh;
+  background-position: center;
+  background-color: rgb(253, 244, 244);
+}
+
+p {
+  margin: auto;
+}
+
+.titre {
+  display: flex;
+  justify-content: center;
+  color: rgb(92, 48, 92);
+  border-radius: 50px;
+  font-family: cursive;
+  height: 30px;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+/* .image {
+  padding: 20px;
+  height: 200px;
+  width: 1555px;
+  opacity: 0.4;
+} */
+
+.formulaire {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+
+  /* background-image: url(images/petitcoeur2.jpg);
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: cover;
+  overflow: hidden; */
+}
+
+form {
+  padding: 20px;
+  font-size: 15px;
+  font-family: cursive;
+  font-weight: bold;
+  color: rgb(92, 48, 92);
+}
+
+label {
+  font-size: 15px;
+  font-family: cursive;
+}
+
+input {
+  font-size: 15px;
+  font-family: cursive;
+  /* border: 2px solid rgb(168, 101, 101);
+  border-radius: 10px; */
+  border: none;
+  border-bottom: 2px solid rgb(168, 101, 101);
+  text-align: center;
+}
+
+select {
+  font-size: 15px;
+  font-family: cursive;
+  /* border: 2px solid rgb(168, 101, 101);
+  border-radius: 10px; */
+  border: none;
+  border-bottom: 2px solid rgb(168, 101, 101);
+  text-align: center;
+}
+
+.boutonrechercher input {
+  font-size: 15px;
+  font-family: cursive;
+  border: 2px solid rgb(168, 101, 101);
+  border-radius: 10px;
+  text-align: center;
+
+  background-color: rgb(92, 48, 92);
+}
+
+.croisiere {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+
+.croisiere2 {
+  font-size: 15px;
+  border-radius: 10px;
+  border: 2px solid rgb(168, 101, 101);
+  color: rgb(92, 48, 92);
+  font-weight: bold;
+  font-family: cursive;
+  margin-top: 800px;
+}
+
+a {
+  text-decoration: none;
+  /* color: #575757; */
+  cursor: pointer;
+}
+
+/* a:visited,
+a:link {
+  /* color: #575757; */
+
+.offresmoment {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  font-family: cursive;
+  color: rgb(92, 48, 92);
+}
+
+/* carrousel */
+* {
+  box-sizing: border-box;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Make the images invisible by default */
+.Containers {
+  display: none;
+}
+
+/* forward & Back buttons */
+.Back,
+.forward {
+  cursor: pointer;
+  position: absolute;
+  top: 48%;
+  width: auto;
+  margin-top: -23px;
+  padding: 17px;
+  color: grey;
+  font-weight: bold;
+  font-size: 19px;
+  transition: 0.4s ease;
+  border-radius: 0 5px 5px 0;
+  user-select: none;
+}
+
+/* Place the "forward button" to the right */
+.forward {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+/*when the user hovers,add a black background with some little opacity */
+.Back:hover,
+.forward:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption Info */
+.Info {
+  color: #e3e3e3;
+  font-size: 16px;
+  padding: 10px 14px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Worknumbering (1/3 etc) */
+.MessageInfo {
+  color: #f2f2f3;
+  font-size: 14px;
+  padding: 10px 14px;
+  position: absolute;
+  top: 0;
+}
+
+/* The circles or bullets and indicators */
+.dots {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  margin: 0 3px;
+  background-color: #acc;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+
+.enable,
+.dots:hover {
+  background-color: #717161;
+}
+
+/* Faint animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.4s;
+  animation-name: fade;
+  animation-duration: 1.4s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 2;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 2;
+  }
+}
+/* fin carrousel */
+
+.touteslescartes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 100px;
+  width: auto;
+}
+
+.carte {
+  text-align: center;
+
+  background-color: rgb(231, 159, 231);
+}
+
+.description {
+  font-size: 14px;
+  font-family: cursive;
+  font-weight: bold;
+}
