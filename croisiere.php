@@ -9,6 +9,6 @@
 
 </head>
 <body>
-    <p> bonjour </p>
+    
 </body>
 </html>

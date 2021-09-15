@@ -1,3 +1,17 @@
+<?php 
+require_once("connexionbd.php");
+
+$sql="SELECT * FROM voyages";
+$query = $db ->prepare($sql);   //requete préparée
+$query->execute();
+$result = $query->fetchAll(PDO :: FETCH_ASSOC); //tableau associatif
+
+// VAR_DUMP($result);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,6 +31,8 @@
             <div class="titre">
                 <p>ALICE VOYAGES</p>
             </div>
+            <button class="admin"> <a href="admin.php"> Admin</a> </button>
+
 
             <div class="croisiere">
                 
@@ -127,22 +143,114 @@
 
 
 <div class="touteslescartes">
-    <div class="carte">
-            <img src="image8.jpg" alt="image">
+
+      
+            <!-- <img class="image" src="image8.jpg" alt="image"> 
+    
+         <p class="description">Village vacances</p>
+        <p>A partir de 500€</p>
+        </div>
+
+
+        <div class="carte">  
+            <img class="image" src="image8.jpg" alt="image"> 
+    
+         <p class="description">Village vacances</p>
+        <p>A partir de 500€</p> -->
+
+        <?php
+
+        foreach($result as $projet) {
+            ?>
+        
+        
+    <div class="carte"> 
+        <div class="container-img"> 
+             
+        <?= "<img  src='".$projet["image"]."' >" ?>
+                <div class="infos-hover">
+                    <i class="fa fa-eye"></i>
+                    <p class="nom"><?php echo $projet['nom'] ?></p>
+                        <p class="description"><?php echo $projet['description'] ?></p>
+                        <p class="prix"> <?php echo $projet['prix'] ?></p>
+                        <p class="nbpersonnes"> <?php echo $projet['nbpersonnes'] ?></p>
+    </div>
+        </div>
+                </div>
+
+                
+<?php
+            }
+
+?>
+    <!-- <div class="carte">  
+        <div class="container-img"> 
+            <img src="image5.jpg" />
+                <div class="infos-hover">
+                    <i class="fa fa-eye"></i>
+                        <p>Village vacances <br> A partir de 500€</p>
+    </div>
+        </div>
+                </div>
+
+
+    <div class="carte">  
+        <div class="container-img">
+            <img src="image7.jpg" />
+                <div class="infos-hover">
+                    <i class="fa fa-eye"></i>
+                        <p>Village vacances <br> A partir de 500€</p>
+    </div> 
+        </div>  
+                </div> -->
+
+    <!-- <div class="container-img">
+        <img src="image6.jpg" />
+        <div class="infos-hover">
+          <i class="fa fa-eye"></i>
+          <p>Village vancances <br> A partir de 500€</p>
+    </div>  -->
+
+ 
+</div>
+
+
+
+    <!-- <div class="carte">
+            <img class="image" src="image3.jpg" alt="image">
     
         <p class="description">Village vacances</p>
         <p>A partir de 500€</p>
 
     </div>
-</div>
 
 
 
+    <div class="carte">
+            <img class="image" src="image3.jpg" alt="image">
+    
+        <p class="description">Village vacances</p>
+        <p>A partir de 500€</p>
+
+    </div>
+</div> -->
 
 
 
 
     </header>
+
+    <footer>
+    <div class="footer2">
+      <a href="https://www.linkedin.com/in/alice-finot/" target="_blank"><img class="footer" src="linkedin2.png" alt="logo" ></a>
+      <p> ©Alice Finot </p>
+      <a href="https://github.com/Alice58000" target="_blank"><img class="footer" src="github44.png" alt="git" ></a>
+     
+    </div>
+
+    </footer>
+
+
 
     <script src="main.js"></script>
 
