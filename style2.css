@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  background-color: rgba(175, 204, 238, 0.795);
+  font-family: "Roboto", sans-serif;
+}
+
+.croisierebouton {
+  font-size: 15px;
+  border-radius: 10px;
+  border: 2px solid rgb(168, 101, 101);
+  color: rgb(21, 77, 77);
+  font-weight: bold;
+  margin-left: 1rem;
+  background-color: rgba(0, 0, 0, 0.123);
+}
+
+.croisiere {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.image {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.image :hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.image1 {
+  margin-bottom: 100px;
+}
+
+.image2 {
+  margin-bottom: 100px;
+}
+
+.image3 {
+  margin-bottom: 100px;
+}
+
+p {
+  text-align: center;
+}

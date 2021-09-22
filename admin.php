@@ -1,11 +1,18 @@
 <?php
+    session_start();
+
+    if(!isset($_SESSION['acces']))
+    header('Location:index.php');
+?>
+
+<?php
     require_once('connexionbd.php');
     if ($_POST) {
         if(isset($_POST["nom"]) && !empty($_POST["nom"])
         && isset($_POST["description"]) && !empty($_POST["description"])
         && isset($_POST["prix"]) && !empty($_POST["prix"])
         && isset($_POST["nbpersonnes"]) && !empty($_POST["nbpersonnes"])
-        && isset($_POST["image"]) && !empty($_POST["image"])) {
+        && isset($_POST["photo"]) && !empty($_POST["photo"])) {
             // $nom= strip_tags($_POST["nom"]);
             // $description= strip_tags($_POST["description"]);
             // $prix= strip_tags($_POST["prix"]);
@@ -15,17 +22,17 @@
              $description = addslashes(htmlspecialchars($_POST['description']));
              $prix = addslashes(htmlspecialchars($_POST['prix']));
              $nbpersonnes = addslashes(htmlspecialchars($_POST['nbpersonnes']));
-             $image = addslashes(htmlspecialchars($_POST['image']));
+             $photo = addslashes(htmlspecialchars($_POST['photo']));
 
             echo $nom;
 
-            $sql = "INSERT INTO voyages (nom, description, prix, nbpersonnes, image) VALUES (:nom,  :description, :prix, :nbpersonnes, :image)";
+            $sql = "INSERT INTO voyages (nom, description, prix, nbpersonnes, photo) VALUES (:nom,  :description, :prix, :nbpersonnes, :photo)";
             $query = $db->prepare($sql);
             $query->bindValue(':nom' , $nom);
             $query->bindValue(':description' , $description);
             $query->bindValue(':prix' , $prix);
             $query->bindValue(':nbpersonnes' , $nbpersonnes);
-            $query->bindValue(':image' , $image);
+            $query->bindValue(':photo' , $photo);
 
             $query->execute();
 
@@ -48,26 +55,26 @@
     <link rel="stylesheet" href="style.css">
     <title>Projet Voyages</title>
 </head>
-<body>
+    <body>
 
-<header class="header">
+        <header class="header">
             <div class="titre">
                 <p>ALICE VOYAGES</p>
             </div>
-            
+                    <button class="admin2"> <a href="index.php"> Retour</a> </button> 
+                    <button class="admin2"> <a href="deconnexionadmin.php"> Se déconnecter</a> </button>
 
-            <section>
+    <section>
             
-           
-
             <div class="formulaire2">
-            <form method="post">
+
+            <form action ="bd.php" method="POST" enctype="multipart/form-data">
+
             <div class="form-groupe">
             <label for= "nom"> Nom  </label>
             <input type="text" name="nom" required>
             </div>
 
-           
             <div class="form-groupe">
             <label for= "description"> Description  </label>
             <input type="text" name="description" required>
@@ -84,87 +91,53 @@
             </div>
 
             <div class="form-groupe">
-            <label for= "image"> Image </label>
-            <input type="file" name="image" required>
+            <label for= "photo"> Image </label>
+            <input type="file" name="photo" >
             </div>
 
 
             <input type="submit" value="Ajouter">
     </form>
+    </div>
+    </section>
+
+
+<?php
+
+    $sql="SELECT * FROM voyages";
+    $query = $db ->prepare($sql);   //requete préparée
+    $query->execute();
+    $result = $query->fetchAll(PDO :: FETCH_ASSOC); //tableau associatif
+
+    // VAR_DUMP($result);
 
 
 
-
-    <a href="supprimer.php?id=<?php echo $projet['id'] ?>">Supprimer</a>
-    <a href="modifier.php?id=<?php echo $projet['id'] ?>">Modifier</a>
-
+    foreach($result as $projet) {
+?>
 
 
+        <div class="carte"> 
+        <div class="container2-img"> 
+     
+        <?= "<img src='upload/" . $projet['photo'] . "' />" ?>
+       
+            <p class="nom"><?php echo $projet['nom'] ?></p>
+            <p class="description"><?php echo $projet['description'] ?></p>
+            <p class="prix"> <?php echo $projet['prix'] ?></p>
+            <p class="nbpersonnes"> <?php echo $projet['nbpersonnes'] ?></p>
 
+</div>
+</div>
+        
+        <div class="supprimer1">
+        <a class="supprimer" href="supprimer.php?id=<?php echo $projet['id'] ?>">Supprimer</a>
+        <a class="supprimer" href="modifier.php?id=<?php echo $projet['id'] ?>">Modifier</a>
+        </div>
+<?php
+    }
 
-
-            <!-- <br>
-            <form action="bd.php" method="POST" enctype="multipart/form-data"> 
-
-             a mettre pour upload images 
-
-                <input  type="text" name="nom" placeholder="Titre de l'annonce" required>
-                <br> <br>
-
-
-                <input  type="text" name="description" placeholder="Description de l'annonce" required>
-                <br> <br>
-
-               
-                 <input  type="text" name="prix" placeholder="Prix" required>
-                <br> <br>
-
-                
-                <input  type="text" name="nbpersonnes" placeholder="Nombres de personnes" required>
-                <br> <br>
-
-               
-
-                <input  type="file" name="photo"  >
-                <br> <br>
-
-                </select>
-
-               <button class="admin"> <a href="index.php"> Retour</a> </button>
-                
-               <input class="admin" type="submit" value="Ajouter">
-                
-                <br> <br>
-
-            </form> -->
-
-          </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+?>
 
 </body>
 </html>

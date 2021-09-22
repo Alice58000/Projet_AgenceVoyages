@@ -8,9 +8,7 @@ $result = $query->fetchAll(PDO :: FETCH_ASSOC); //tableau associatif
 
 // VAR_DUMP($result);
 
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -23,15 +21,12 @@ $result = $query->fetchAll(PDO :: FETCH_ASSOC); //tableau associatif
 </head>
 <body>
 
-<!-- <img src="island-pana.svg" alt="svg"> -->
-  
-
-  
 <header class="header">
             <div class="titre">
                 <p>ALICE VOYAGES</p>
             </div>
-            <button class="admin"> <a href="admin.php"> Admin</a> </button>
+            <button class="admin"> <a href="connexionadmin.php"> Admin</a> </button>
+
 
 
             <div class="croisiere">
@@ -45,20 +40,17 @@ $result = $query->fetchAll(PDO :: FETCH_ASSOC); //tableau associatif
             <div class="formulaire">
         
              
-                <form action="admin.php" method="POST">
+                <form action="recherche.php" method="POST">
                
-
+                    
                     <label for="name">Destination </label>
                  
-                        <select class="select" name="name"  >
-                        <option value="">Choisir une option </option> 
-                        <option value="pays"> France </option>
-                        <option value="pays">USA</option> 
-                        <option value="pays">Maldives</option> 
-                        <option value="pays">Brésil</option> 
-                        <option value="pays">Polynésie</option> 
-                        <option value="pays">Angleterre</option> 
-                        <option value="pays">Argentine</option> 
+                        <select class="select" name="choisir"  >
+                        <option value="choix">Choisir une option </option> 
+                        <option value="choix1"> Croisières </option>
+                        <option value="choix2">Hôtels</option> 
+                        <option value="choix3">Visites guidées</option> 
+                         
 
                         </select>
 
@@ -66,11 +58,11 @@ $result = $query->fetchAll(PDO :: FETCH_ASSOC); //tableau associatif
                     <input type="date" name="date" value="08-09-2021" min="01-09-2021" max="01-09-2022">    
 
                     <label for="date">Date de fin </label>
-                    <input type="date" name="date" value="08-09-2021" min="01-09-2021" max="01-09-2022">  
+                    <input type="date" name="date2" value="08-09-2021" min="01-09-2021" max="01-09-2022">  
                     
                     <label for="nombres">Nombres de personnes </label>
 
-                    <select class="select" name="name"  >
+                    <select class="select" name="name2"  >
                         <option value="">Choisir une option </option> 
                         <option value="nombres">1</option>
                         <option value="nombres">2</option> 
@@ -87,87 +79,70 @@ $result = $query->fetchAll(PDO :: FETCH_ASSOC); //tableau associatif
 
                         <input class="boutonrechercher" type="submit" value="Rechercher">
 
-                         <!-- <img class="image" src="images/images.jpg" alt="images">    -->
                     <br>
-
-
                 </form>
             </div> 
           
 
 
 
-<div class="offresmoment">
-    <p>Les offres du moment </p>
-</div>
-
-
-<!-- carrousel -->
- <!-- Slideshow container -->
- <div class="slideshow-container fade">
-
-<!-- Full images with numbers and message Info -->
-<div class="Containers">
-  <div class="MessageInfo"></div>
-  <img src="image3.jpg" style="width:100%">
-  <div class="Info"></div>
-</div>
-
-<div class="Containers">
-  <div class="MessageInfo"></div>
-  <img src="image15.jpg" style="width:100%">
-  <div class="Info"></div>
-</div>
-
-<div class="Containers">
-  <div class="MessageInfo"></div>
-  <img src="image16.jpg" style="width:100%">
-  <div class="Info"></div>
-</div>
-
-<!-- Back and forward buttons -->
-<a class="Back" onclick="plusSlides(-1)">&#10094;</a>
-<a class="forward" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
-
-<!-- The circles/dots -->
-<div style="text-align:center">
-<span class="dots" onclick="currentSlide(1)"></span>
-<span class="dots" onclick="currentSlide(2)"></span>
-<span class="dots" onclick="currentSlide(3)"></span>
-</div> 
-
-<!-- fin carrousel -->
-
-
-
-<div class="touteslescartes">
-
-      
-            <!-- <img class="image" src="image8.jpg" alt="image"> 
-    
-         <p class="description">Village vacances</p>
-        <p>A partir de 500€</p>
+        <div class="offresmoment">
+            <p>Les offres du moment </p>
         </div>
 
 
-        <div class="carte">  
-            <img class="image" src="image8.jpg" alt="image"> 
-    
-         <p class="description">Village vacances</p>
-        <p>A partir de 500€</p> -->
+        <!-- carrousel -->
+        <!-- Slideshow container -->
+        <div class="slideshow-container fade">
 
-        <?php
+        <!-- Full images with numbers and message Info -->
+        <div class="Containers">
+        <div class="MessageInfo"></div>
+        <img src="beach.jpg" style="width:100%">
+        <div class="Info"></div>
+        </div>
 
-        foreach($result as $projet) {
-            ?>
+        <div class="Containers">
+        <div class="MessageInfo"></div>
+        <img src="summer.jpg" style="width:100%">
+        <div class="Info"></div>
+        </div>
+
+        <div class="Containers">
+        <div class="MessageInfo"></div>
+        <img src="summer3.jpg" style="width:100%">
+        <div class="Info"></div>
+        </div>
+
+        <!-- Back and forward buttons -->
+        <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <!-- The circles/dots -->
+        <div style="text-align:center">
+        <span class="dots" onclick="currentSlide(1)"></span>
+        <span class="dots" onclick="currentSlide(2)"></span>
+        <span class="dots" onclick="currentSlide(3)"></span>
+        </div> 
+
+        <!-- fin carrousel -->
+
+
+
+        <div class="touteslescartes">
+
+<?php
+
+    foreach($result as $projet) {
+?>
         
         
     <div class="carte"> 
         <div class="container-img"> 
              
-        <?= "<img  src='".$projet["image"]."' >" ?>
+        <?= "<img src='upload/" . $projet['photo'] . "' />" ?>
                 <div class="infos-hover">
                     <i class="fa fa-eye"></i>
                     <p class="nom"><?php echo $projet['nom'] ?></p>
@@ -183,64 +158,11 @@ $result = $query->fetchAll(PDO :: FETCH_ASSOC); //tableau associatif
             }
 
 ?>
-    <!-- <div class="carte">  
-        <div class="container-img"> 
-            <img src="image5.jpg" />
-                <div class="infos-hover">
-                    <i class="fa fa-eye"></i>
-                        <p>Village vacances <br> A partir de 500€</p>
-    </div>
         </div>
-                </div>
 
+</header>
 
-    <div class="carte">  
-        <div class="container-img">
-            <img src="image7.jpg" />
-                <div class="infos-hover">
-                    <i class="fa fa-eye"></i>
-                        <p>Village vacances <br> A partir de 500€</p>
-    </div> 
-        </div>  
-                </div> -->
-
-    <!-- <div class="container-img">
-        <img src="image6.jpg" />
-        <div class="infos-hover">
-          <i class="fa fa-eye"></i>
-          <p>Village vancances <br> A partir de 500€</p>
-    </div>  -->
-
- 
-</div>
-
-
-
-    <!-- <div class="carte">
-            <img class="image" src="image3.jpg" alt="image">
-    
-        <p class="description">Village vacances</p>
-        <p>A partir de 500€</p>
-
-    </div>
-
-
-
-    <div class="carte">
-            <img class="image" src="image3.jpg" alt="image">
-    
-        <p class="description">Village vacances</p>
-        <p>A partir de 500€</p>
-
-    </div>
-</div> -->
-
-
-
-
-    </header>
-
-    <footer>
+<footer>
     <div class="footer2">
       <a href="https://www.linkedin.com/in/alice-finot/" target="_blank"><img class="footer" src="linkedin2.png" alt="logo" ></a>
       <p> ©Alice Finot </p>
@@ -248,9 +170,7 @@ $result = $query->fetchAll(PDO :: FETCH_ASSOC); //tableau associatif
      
     </div>
 
-    </footer>
-
-
+</footer>
 
     <script src="main.js"></script>
 

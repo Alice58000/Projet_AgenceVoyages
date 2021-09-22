@@ -1,14 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 body {
   margin: auto;
-  background-image: url(island-pana.svg);
+  background-image: url(Island-pana.svg);
   background-repeat: no-repeat;
   background-size: auto;
   height: 100vh;
   background-position: center;
-  background-color: rgb(253, 244, 244);
-  /* display: flex;
-  justify-content: center;
-  flex-direction: column; */
+  background-color: rgba(175, 204, 238, 0.795);
+  font-family: "Roboto", sans-serif;
 }
 
 p {
@@ -18,20 +18,19 @@ p {
 .titre {
   display: flex;
   justify-content: center;
-  color: rgb(92, 48, 92);
+  color: rgb(21, 77, 77);
   border-radius: 50px;
-  font-family: cursive;
+  margin-top: 1rem;
   height: 30px;
   font-weight: bold;
   font-size: 35px;
 }
 
-/* .image {
-  padding: 20px;
-  height: 200px;
-  width: 1555px;
-  opacity: 0.4;
-} */
+@media all and (max-width: 400px) {
+  .titre {
+    margin-left: 50px;
+  }
+}
 
 .formulaire {
   display: flex;
@@ -39,25 +38,27 @@ p {
   margin-top: 80px;
 }
 
+@media all and (max-width: 400px) {
+  .formulaire {
+    margin-left: 50px;
+  }
+}
+
 form {
   padding: 20px;
   font-size: 15px;
-  font-family: cursive;
   font-weight: bold;
-  color: rgb(92, 48, 92);
+  color: rgb(21, 77, 77);
   background-color: rgba(0, 0, 0, 0.021);
+  justify-content: center;
 }
 
 label {
   font-size: 15px;
-  font-family: cursive;
 }
 
 input {
   font-size: 15px;
-  font-family: cursive;
-  /* border: 2px solid rgb(168, 101, 101);
-  border-radius: 10px; */
   border: none;
   border-bottom: 2px solid rgb(168, 101, 101);
   text-align: center;
@@ -65,9 +66,6 @@ input {
 
 select {
   font-size: 15px;
-  font-family: cursive;
-  /* border: 2px solid rgb(168, 101, 101);
-  border-radius: 10px; */
   border: none;
   border-bottom: 2px solid rgb(168, 101, 101);
   text-align: center;
@@ -75,12 +73,10 @@ select {
 
 .boutonrechercher input {
   font-size: 15px;
-  font-family: cursive;
   border: 2px solid rgb(168, 101, 101);
   border-radius: 10px;
   text-align: center;
-
-  background-color: rgb(92, 48, 92);
+  background-color: rgb(21, 77, 77);
 }
 
 .croisiere {
@@ -95,25 +91,35 @@ select {
   border: 2px solid rgb(168, 101, 101);
   color: rgb(92, 48, 92);
   font-weight: bold;
-  font-family: cursive;
   margin-top: 800px;
   background-color: rgba(0, 0, 0, 0.123);
+}
+
+@media all and (max-width: 400px) {
+  .croisiere2 {
+    margin-left: 20px;
+  }
 }
 
 .admin {
   font-size: 15px;
   border-radius: 10px;
   border: 2px solid rgb(168, 101, 101);
-  color: rgb(92, 48, 92);
+  color: rgb(21, 77, 77);
   font-weight: bold;
-  font-family: cursive;
-
+  margin-left: 1rem;
   background-color: rgba(0, 0, 0, 0.123);
+}
+
+@media all and (max-width: 400px) {
+  .admin {
+    margin-top: 100px;
+    margin-left: 150px;
+  }
 }
 
 a {
   text-decoration: none;
-  /* color: #575757; */
   cursor: pointer;
 }
 
@@ -122,8 +128,13 @@ a {
   text-align: center;
   font-size: 30px;
   padding: 20px;
-  font-family: cursive;
-  color: rgb(92, 48, 92);
+  color: rgb(21, 77, 77);
+}
+
+@media all and (max-width: 400px) {
+  .offresmoment {
+    margin-left: 20px;
+  }
 }
 
 /* carrousel */
@@ -234,6 +245,7 @@ a {
     opacity: 2;
   }
 }
+
 /* fin carrousel */
 
 .touteslescartes {
@@ -252,19 +264,15 @@ a {
 }
 
 .container-img {
-  /* display: block; */
   position: relative;
   overflow: hidden;
-
-  /* border: 1px solid #000; */
 }
-.container-img img {
-  /* width: 100%;
-  height: 100%; */
 
+.container-img img {
   width: 500px;
   height: 330px;
 }
+
 .container-img .infos-hover {
   display: block;
   position: absolute;
@@ -274,7 +282,6 @@ a {
   height: 0;
   color: #fff;
   font-size: 20px;
-
   text-align: center;
   background: rgba(0, 0, 0, 0.8);
   -webkit-transition: all 0.5s;
@@ -283,23 +290,26 @@ a {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
+
 .container-img .infos-hover i {
   margin-top: 60px;
   font-size: 50px;
 }
+
 .container-img .infos-hover p {
   text-align: center;
   margin-top: 40px;
 }
+
 .container-img:hover .infos-hover {
   height: 100%;
 }
 
-/* .description {
-  font-size: 14px;
-  font-family: cursive;
-  font-weight: bold;
-} */
+@media all and (max-width: 600px) {
+  .container img img {
+    width: 300px;
+  }
+}
 
 footer {
   color: white;
@@ -318,10 +328,16 @@ footer {
   display: flex;
   justify-content: center;
   text-align: center;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(10px);
   box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.7);
   border-radius: 20px;
   width: 400px;
+}
+
+@media all and (max-width: 400px) {
+  .formulaire2 {
+    margin-top: 50px;
+  }
 }
 
 .admin {
@@ -333,4 +349,62 @@ a:visited,
 a:link {
   color: black;
   text-decoration: none;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.container-img {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.container-img img {
+  box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.829);
+}
+
+.container2-img {
+  text-align: center;
+  margin-top: 350px;
+}
+
+.container2-img img {
+  box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.829);
+}
+
+@media all and (max-width: 400px) {
+  .container2-img img {
+    width: 300px;
+  }
+}
+
+.supprimer1 {
+  text-align: center;
+}
+
+.supprimer {
+  background-color: rgb(167, 231, 231);
+}
+
+.Containers img {
+  box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.829);
+}
+
+.admin2 {
+  font-size: 15px;
+  border-radius: 10px;
+  border: 2px solid rgb(168, 101, 101);
+  color: rgb(21, 77, 77);
+  font-weight: bold;
+  margin-left: 1rem;
+  background-color: rgba(0, 0, 0, 0.123);
+}
+
+@media all and (max-width: 600px) {
+  .admin2 {
+    margin-left: 20px;
+    margin-top: 50px;
+  }
 }

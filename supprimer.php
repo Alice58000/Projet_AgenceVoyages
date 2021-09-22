@@ -16,6 +16,6 @@ if(isset($_GET ["id"]) && !empty($_GET ["id"])) {
     $query->bindValue(":id", $id, PDO::PARAM_INT);
     $query->execute();
 
-header("Location: index.php");
+header("Location: admin.php");
 
 }
